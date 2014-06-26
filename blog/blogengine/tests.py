@@ -35,6 +35,9 @@ class PostTest(TestCase):
 class AdminTest(LiveServerTestCase):
 	fixtures = ['users.json']
 
+	def setUp(self):
+		self.client = Client()
+
 	def test_login(self):
 		# Create client
 		c = Client()
